@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QPixmap>
+#include "config.h"
 
 class Map
 {
