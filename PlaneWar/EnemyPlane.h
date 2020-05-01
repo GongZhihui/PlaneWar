@@ -46,6 +46,5 @@ public:
 
 private:
     EnemyPlaneType enemyPlanes_;
-
     int recorder_{ 0 };
 };
