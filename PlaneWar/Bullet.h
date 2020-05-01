@@ -8,9 +8,9 @@ class Bullet
 public:
     Bullet();
 
+    void setPosition(int x, int y);
     void updatePosition();
 
-    const QPixmap &bullet() const;
     int& x();
     int& y();
     int speed() const;

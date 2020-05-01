@@ -21,27 +21,23 @@ void HeroPlane::shoot()
 
         recorder_ = 0;
 
+        // 找到一个空闲的子弹就break
         for (auto& it : bullets_)
         {
             if (it.is_free())
             {
-                it.is_free() = false;
-                it.x() = x_ + border_.width() / 2 - 10;
-                it.y() = y_ - 25;
+                it.setPosition(x_ + border_.width() / 2 - 10, y_ - 25);
                 break;
             }
         }
 
     } while (0);
     
+    // 更新所有子弹的位置
     for (auto& it : bullets_)
     {
-        if (!it.is_free())
-        {
-            it.updatePosition();
-        }
+        it.updatePosition();
     }
-
 }
 
 void HeroPlane::setPosition(int x, int y)

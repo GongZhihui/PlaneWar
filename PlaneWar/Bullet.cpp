@@ -8,6 +8,13 @@ Bullet::Bullet()
 {
 }
 
+void Bullet::setPosition(int x, int y)
+{
+    isFree_ = false;
+    x_ = x;
+    y_ = y;
+}
+
 void Bullet::updatePosition()
 {
     if (isFree_) 
@@ -22,11 +29,6 @@ void Bullet::updatePosition()
     {
         isFree_ = true;
     }
-}
-
-const QPixmap& Bullet::bullet() const
-{
-    return bullet_;
 }
 
 int& Bullet::x()
