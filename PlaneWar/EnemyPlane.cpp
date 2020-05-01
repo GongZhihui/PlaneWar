@@ -55,7 +55,6 @@ QRect EnemyPlane::border()
 
 Enemy::Enemy()
 {
-    recorder_ = 0;
     srand(time(NULL));
 }
 
