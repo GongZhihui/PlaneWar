@@ -23,9 +23,9 @@ private:
     QPixmap bullet_;
     int x_;
     int y_;
-    int speed_;
-    bool isFree_;
-
     QRect border_;
+
+    int speed_{ BULLET_SPEED };
+    bool isFree_{ true };
 };
 

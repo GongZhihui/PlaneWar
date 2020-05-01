@@ -58,11 +58,6 @@ void Bomb::draw(QPainter& painter)
     }
 }
 
-
-BombEffect::BombEffect()
-{
-}
-
 void BombEffect::show(int x, int y)
 {
     for (auto& it : bombs_) 

@@ -2,16 +2,9 @@
 #include "config.h"
 
 EnemyPlane::EnemyPlane()
+    : enemyPlane_{ ENEMY_PLANE_PATH }
+    , border_{ x_, y_ , enemyPlane_.width(), enemyPlane_.height() }
 {
-    int ret = enemyPlane_.load(ENEMY_PLANE_PATH);
-    x_ = 0;
-    y_ = 0;
-    isFree_ = true;
-    speed_ = ENEMY_PLANE_SPEED;
-
-    border_.setWidth(enemyPlane_.width());
-    border_.setHeight(enemyPlane_.height());
-    border_.moveTo(x_, y_);
 }
 
 void EnemyPlane::updatePosition()

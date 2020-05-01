@@ -1,16 +1,11 @@
 #include "Bullet.h"
 
 Bullet::Bullet()
+    : bullet_{ BULLET_PATH }
+    , x_{ (GAME_WIDTH - bullet_.width()) / 2 }
+    , y_{ GAME_HEIGHT }
+    , border_{x_, y_, bullet_.width(), bullet_.height()}
 {
-    int ret = bullet_.load(BULLET_PATH);
-    x_ = (GAME_WIDTH - bullet_.width()) / 2;
-    y_ = GAME_HEIGHT;
-    isFree_ = true;
-    speed_ = BULLET_SPEED;
-
-    border_.setWidth(bullet_.width());
-    border_.setHeight(bullet_.height());
-    border_.moveTo(x_, y_);
 }
 
 void Bullet::updatePosition()

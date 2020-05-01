@@ -2,15 +2,11 @@
 #include "config.h"
 
 HeroPlane::HeroPlane()
+    : plane_{ HERO_PATH }
+    , x_{ (GAME_WIDTH - plane_.width()) / 2 }
+    , y_{ GAME_HEIGHT - plane_.height() }
+    , border_{x_, y_, plane_.width(),plane_.height() }
 {
-    plane_.load(HERO_PATH);
-
-    x_ = (GAME_WIDTH - plane_.width()) / 2;
-    y_ = (GAME_HEIGHT - plane_.height());
-    
-    rect_.setWidth(plane_.width());
-    rect_.setHeight(plane_.height());
-    rect_.moveTo(x_, y_);
 }
 
 void HeroPlane::shoot()
@@ -30,7 +26,7 @@ void HeroPlane::shoot()
             if (it.is_free())
             {
                 it.is_free() = false;
-                it.x() = x_ + rect_.width() / 2 - 10;
+                it.x() = x_ + border_.width() / 2 - 10;
                 it.y() = y_ - 25;
                 break;
             }
@@ -52,7 +48,7 @@ void HeroPlane::setPosition(int x, int y)
 {
     x_ = x;
     y_ = y;
-    rect_.moveTo(x_, y_);
+    border_.moveTo(x_, y_);
 }
 
 void HeroPlane::draw(QPainter& painter)
@@ -77,7 +73,7 @@ HeroPlane::BulletType& HeroPlane::bullets()
 
 QRect HeroPlane::border()
 {
-    return rect_;
+    return border_;
 }
 
 int HeroPlane::x()

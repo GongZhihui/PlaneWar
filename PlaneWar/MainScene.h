@@ -15,9 +15,7 @@ public:
     MainScene(QWidget *parent = Q_NULLPTR);
 
     void initScene();
-
     void playGame();
-
     void updatePosition();
 
     void paintEvent(QPaintEvent * ev) override;

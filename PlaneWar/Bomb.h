@@ -1,10 +1,9 @@
 #pragma once
 #include <QPixmap>
-#include <qvector>
+#include <vector>
 #include <array>
 #include <QPainter>
 #include "config.h"
-#include <mutex>
 
 class Bomb
 {
@@ -18,25 +17,22 @@ public:
     void draw(QPainter& painter);
 
 private:
-    int x_ = 0;
-    int y_ = 0;
+    std::vector<QPixmap> bombPix_;
 
-    QVector<QPixmap> bombPix_;
+    int x_{ 0 };
+    int y_{ 0 };
 
-    bool isFree_ = true ;
-    int recorder_ = 0 ;
-    int index_ = 0 ;
-
-    std::mutex mtx_;
+    bool isFree_{ true };
+    int recorder_{ 0 };
+    int index_{ 0 };
 };
-
 
 //--------------------------------------------
 
 class BombEffect 
 {
 public:
-    BombEffect();
+    BombEffect() = default;
 
     void show(int x, int y);
     void update();

@@ -37,7 +37,7 @@ void MainScene::playGame()
 
 void MainScene::updatePosition()
 {
-    map_.mapPosition();
+    map_.updatePosition();
     heroPlane_.shoot();
     enemy_.updatePosition();
     bombEffect_.update();
@@ -80,9 +80,7 @@ void MainScene::collisionDetection()
                 bombEffect_.show(enemyPlane.x(), enemyPlane.y());
                 QSound::play(SOUND_BOMB);
             }
-
         }
-
     }
 }
 

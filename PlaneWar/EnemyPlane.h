@@ -20,10 +20,10 @@ public:
 private:
     QPixmap enemyPlane_;
 
-    int x_;
-    int y_;
-    int speed_;
-    bool isFree_;
+    int x_{ 0 };
+    int y_{ 0 };
+    int speed_{ ENEMY_PLANE_SPEED };
+    bool isFree_{ true };
 
     QRect border_;
 };

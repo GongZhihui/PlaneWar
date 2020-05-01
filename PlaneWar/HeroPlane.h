@@ -29,7 +29,7 @@ private:
     int x_;
     int y_;
 
-    QRect rect_;
+    QRect border_;
 
     BulletType bullets_;
     int recorder_;
