@@ -10,11 +10,11 @@
 * `vs2019`开发`qt`需要安装`msvc版的qt`和`qt vs tool插件`；
 * 如果环境配置好了，编译错误，多半是`window sdk`不匹配，重新选择下`平台工具集`就好了
 
-## `其他`
+## 其他
 * 我已经生成好了`plane.rcc`文件【在项目的根目录下】，仅仅需要把它放到执行文件目录下即可，该项目需要把放到执行文件同级目录下的res目录里，需要新建个res目录。
 * 关于中文乱码，可用c++11字符串字面量u8"xxx"解决;
 * 有些地方的代码跟老师的代码不一样，我重构了下代码，比如：  
-* * 需要显示的都提供`void draw(QPainter&)`接口
+   * 需要显示的都提供`void draw(QPainter&)`接口
     ```cpp
     void MainScene::paintEvent(QPaintEvent* ev)
     {
@@ -26,7 +26,7 @@
         bombEffect_.draw(painter);
     }
     ```  
-* * 将敌军飞机和爆炸分别再次封装
+   * 将敌军飞机和爆炸分别再次封装
     ```cpp
     class Enemy 
     {
